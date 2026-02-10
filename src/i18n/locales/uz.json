@@ -1,0 +1,202 @@
+﻿{
+  "app": {
+    "name": "Skynetic",
+    "tagline": "AI asosidagi ta'lim platformasi",
+    "footerLeft": "Skynetic © 2026. Barcha huquqlar himoyalangan.",
+    "footerRight": "AI yordamida qulay va ochiq ta'lim uchun."
+  },
+  "nav": {
+    "home": "Bosh sahifa",
+    "catalog": "Kurslar katalogi",
+    "lesson": "Dars ko'rish",
+    "dashboard": "Boshqaruv paneli",
+    "profile": "Profil",
+    "login": "Kirish",
+    "logout": "Chiqish",
+    "register": "Ro'yxatdan o'tish",
+    "start": "O'qishni boshlash",
+    "toggle": "Navigatsiyani almashtirish"
+  },
+  "language": {
+    "label": "Til",
+    "english": "Ingliz",
+    "russian": "Rus",
+    "uzbek": "O'zbek"
+  },
+  "theme": {
+    "label": "Mavzu",
+    "light": "Yorug'",
+    "dark": "Qorong'i",
+    "toggle": "Mavzuni almashtirish"
+  },
+  "common": {
+    "search": "Qidirish",
+    "progress": "Progress",
+    "lessons": "dars",
+    "hours": "soat",
+    "restart": "Qayta boshlash",
+    "play": "Boshlash",
+    "pause": "Pauza",
+    "resume": "Davom ettirish",
+    "stop": "To'xtatish",
+    "submit": "Yuborish",
+    "save": "Sozlamalarni saqlash",
+    "loading": "Yuklanmoqda...",
+    "error": "Xatolik",
+    "back": "Orqaga",
+    "score": "Natija",
+    "completed": "Bajarildi",
+    "notCompleted": "Bajarilmadi",
+    "noLesson": "Dars topilmadi.",
+    "noAccess": "Davom etish uchun tizimga kiring.",
+    "notFound": "Sahifa topilmadi."
+  },
+  "home": {
+    "eyebrow": "Skynetic",
+    "title": "AI tutorlar, kurslar va real progress kuzatuvi bilan zamonaviy ta'lim platformasi.",
+    "subtitle": "Dasturlash, tillar va asosiy fanlarda darslar, testlar va moslashtirilgan yordam bilan o'rganing.",
+    "ctaPrimary": "Katalogni ko'rish",
+    "ctaSecondary": "Panelni ko'rish",
+    "featured": "Tavsiya",
+    "featuredTitle": "Bugun boshlash uchun kurslar",
+    "browseAll": "Hammasini ko'rish",
+    "stats": {
+      "learners": {
+        "label": "Faol o'quvchilar",
+        "helper": "68 ta mamlakatda"
+      },
+      "sessions": {
+        "label": "AI tutor sessiyalari",
+        "helper": "So'nggi 30 kun"
+      },
+      "completion": {
+        "label": "Tugallash darajasi",
+        "helper": "Kuzatilgan guruhlar uchun"
+      }
+    },
+    "value": {
+      "aiTitle": "Moslashuvchan AI tutor",
+      "aiBody": "Natijalaringiz asosida tezkor izohlar, misollar va tavsiyalar.",
+      "journeyTitle": "Tuzilgan o'quv yo'llari",
+      "journeyBody": "Barqaror progress va ishonch uchun yo'nalishlar.",
+      "insightTitle": "Ma'lumotlarga asoslangan tahlil",
+      "insightBody": "Tayyorgarlik, imtihon ballari va zaif mavzularni kuzating."
+    }
+  },
+  "catalog": {
+    "eyebrow": "Kurslar katalogi",
+    "title": "Keyingi o'quv yo'lingizni toping",
+    "subtitle": "Dasturlash, tillar va asosiy fanlar bo'yicha tuzilgan dasturlar.",
+    "searchPlaceholder": "Kurslarni qidirish",
+    "available": "kurs mavjud"
+  },
+  "course": {
+    "open": "Kursni ochish"
+  },
+  "categories": {
+    "programming": "Dasturlash",
+    "languages": "Tillar",
+    "school": "Maktab fanlari"
+  },
+  "lesson": {
+    "eyebrow": "Dars ko'rish",
+    "theoryTitle": "Nazariya (bosqichma-bosqich)",
+    "endNotice": "Dars bo'limi yakunlandi.",
+    "courseOutline": "Kurs rejasi",
+    "minutes": "daq",
+    "audioLabel": "Darsni ovozli o'qish",
+    "audioReady": "O'ynatish",
+    "audioPause": "Pauza",
+    "audioResume": "Davom",
+    "audioStop": "To'xtatish",
+    "audioRate": "Nutq tezligi",
+    "audioUnavailable": "Audio uchun qo'llab-quvvatlanadigan brauzer kerak."
+  },
+  "chat": {
+    "title": "AI tutor",
+    "welcome": "Salom! Men Skynetic AI tutoriman. Tushunmagan joylaringizni so'rang.",
+    "placeholder": "AI tutordan so'rash",
+    "thinking": "O'ylayapman...",
+    "error": "AI xizmati mavjud emas. Qayta urinib ko'ring."
+  },
+  "exercises": {
+    "title": "Mashqlar",
+    "hint": "Maslahat",
+    "answerPlaceholder": "Javobingizni yozing",
+    "submit": "Mashqlarni yuborish",
+    "saved": "Mashqlar yuborildi"
+  },
+  "quiz": {
+    "start": "Testni boshlash",
+    "submit": "Testni yuborish",
+    "score": "Natijangiz",
+    "correct": "To'g'ri",
+    "incorrect": "Noto'g'ri",
+    "tryAgain": "Qayta urinib ko'ring",
+    "type": {
+      "lesson-review": "Dars tekshiruvi",
+      "mid-course": "Kurs o'rtasi",
+      "final": "Yakuniy imtihon"
+    }
+  },
+  "dashboard": {
+    "eyebrow": "Boshqaruv paneli",
+    "title": "Xush kelibsiz, {{name}}",
+    "subtitle": "Kurslaringiz bo'yicha progress, baholar va o'sishni kuzating.",
+    "enrolled": "Yozilgan kurslar",
+    "averageScore": "O'rtacha ball",
+    "streak": "Ketma-ket kunlar",
+    "rank": "Reyting o'rni",
+    "performance": "O'sish grafigi",
+    "leaderboard": "Reyting",
+    "activeCourses": "Faol kurslar",
+    "continue": "O'zingiz qolgan joydan davom eting.",
+    "assessment": "Baholashga tayyorgarlik",
+    "assessmentHelp": "Keyingi darsga o'tishdan oldin test natijalarini ko'ring.",
+    "lessonReview": "Dars tekshiruvi",
+    "midCourse": "Kurs o'rtasi",
+    "finalExam": "Yakuniy imtihon",
+    "enrolledBadge": "yozilgan",
+    "points": "ball"
+  },
+  "profile": {
+    "eyebrow": "Profil",
+    "title": "O'quvchi profili",
+    "subtitle": "Maqsadlaringizni yangilang, AI tavsiyalarini moslashtiring.",
+    "account": "Hisob ma'lumotlari",
+    "preferences": "O'quv sozlamalari",
+    "fullName": "To'liq ism",
+    "email": "Email",
+    "goals": "Maqsadlar",
+    "focus": "Asosiy yo'nalishlar",
+    "badges": "Nishonlar",
+    "secure": "Xavfsiz AI o'quv profili",
+    "save": "Sozlamalarni saqlash",
+    "defaultGoals": "6 hafta ichida muntazam mashq bilan oraliq bosqichlarga erishish.",
+    "defaultFocus": "Python asoslari, inglizcha suhbat, algebra takrorlash."
+  },
+  "auth": {
+    "loginTitle": "Xush kelibsiz",
+    "loginSubtitle": "Skynetic bilan o'qishni davom ettirish uchun kiring.",
+    "registerTitle": "Hisob yarating",
+    "registerSubtitle": "AI yordamida o'qishni boshlang.",
+    "email": "Email",
+    "password": "Parol",
+    "confirm": "Parolni tasdiqlang",
+    "passwordMismatch": "Parollar mos kelmadi.",
+    "invalidCredentials": "Noto'g'ri email yoki parol.",
+    "accountDeleted": "Bu hisob o'chirib tashlandi. O'qishni davom ettirish uchun iltimos qayta ro'yxatdan o'ting.",
+    "emailExists": "Bu email allaqachon ro'yxatdan o'tgan. Iltimos, kiring yoki boshqa emaildan foydalaning.",
+    "passwordWeak": "Parol notaqin kuchli. Kamida 6 ta belgi ishlatilishi kerak.",
+    "signupFailed": "Hisobni yarata olmadi. Iltimos, qayta urinib ko'ring.",
+    "confirmEmail": "Hisob yaratildi! Hisobingizni tasdiqlash uchun emailingizni tekshiring va kirishdan oldin tasdiqlang.",
+    "tooManyRequests": "Juda ko'p so'rovlar. Iltimos, bir paytni kuting va qayta urinib ko'ring.",
+    "signIn": "Kirish",
+    "signUp": "Hisob yaratish",
+    "signOut": "Chiqish",
+    "haveAccount": "Hisobingiz bormi?",
+    "needAccount": "Hisob kerakmi?",
+    "goRegister": "Ro'yxatdan o'tish",
+    "goLogin": "Kirish"
+  }
+}
