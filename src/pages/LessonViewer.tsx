@@ -1,4 +1,4 @@
-﻿import { useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { PauseCircle, PlayCircle, Square } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
@@ -16,9 +16,10 @@ import { useTTS } from '../hooks/useTTS'
 
 export const LessonViewer = () => {
   const { courseId, lessonId } = useParams()
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const { courses, lessonProgress, recordExercises, recordQuizScore } = useAppStore()
-  const [isPlaying, setIsPlaying] = useState(true)
+  const [hasStarted, setHasStarted] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(false)
 
   const course = useMemo(
     () => courses.find((item) => item.id === courseId) ?? courses[0],
@@ -30,14 +31,21 @@ export const LessonViewer = () => {
     return course.lessons.find((item) => item.id === lessonId) ?? course.lessons[0]
   }, [course, lessonId])
 
+  const ttsText = lesson ? lesson.theory.join(' ') : ''
+  const { isSpeaking, isPaused, rate, setRate, speak, pause, resume, stop, error } = useTTS(
+    ttsText,
+    { lang: i18n.language },
+  )
+
+  const textSpeed = 1600 / Math.max(rate, 0.7)
+
   const { visibleLines, progress, isComplete, reset } = useProgressiveText(
     lesson?.theory ?? [],
-    isPlaying,
+    hasStarted && isPlaying,
+    textSpeed,
   )
 
   const lessonRecord = lesson ? lessonProgress[lesson.id] : undefined
-  const ttsText = lesson ? lesson.theory.join(' ') : ''
-  const { isSpeaking, isPaused, rate, setRate, speak, pause, resume, stop, error } = useTTS(ttsText)
 
   if (!course || !lesson) {
     return <p className="text-sm text-slate-500 dark:text-slate-300">{t('common.noLesson')}</p>
@@ -57,9 +65,25 @@ export const LessonViewer = () => {
             {lesson.summary}
           </p>
         </div>
-        <Badge className="w-fit border-teal/20 bg-teal/10 text-teal dark:border-teal-500/40 dark:bg-teal-500/20 dark:text-teal-200">
-          {lesson.durationMinutes} {t('lesson.minutes')}
-        </Badge>
+        <div className="flex flex-col items-end gap-3 md:items-end">
+          <Badge className="w-fit border-teal/20 bg-teal/10 text-teal dark:border-teal-500/40 dark:bg-teal-500/20 dark:text-teal-200">
+            {lesson.durationMinutes} {t('lesson.minutes')}
+          </Badge>
+          <Button
+            size="sm"
+            onClick={() => {
+              if (!hasStarted) {
+                setHasStarted(true)
+                setIsPlaying(true)
+                if (!isSpeaking && !error) {
+                  speak()
+                }
+              }
+            }}
+          >
+            {t('lesson.start')}
+          </Button>
+        </div>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[1fr_1.2fr_0.9fr]">
@@ -84,9 +108,19 @@ export const LessonViewer = () => {
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => setIsPlaying((state) => !state)}
+                    onClick={() => {
+                      if (!hasStarted) {
+                        setHasStarted(true)
+                        setIsPlaying(true)
+                        if (!isSpeaking && !error) {
+                          speak()
+                        }
+                        return
+                      }
+                      setIsPlaying((state) => !state)
+                    }}
                   >
-                    {isPlaying ? (
+                    {hasStarted && isPlaying ? (
                       <>
                         <PauseCircle size={16} /> {t('common.pause')}
                       </>
