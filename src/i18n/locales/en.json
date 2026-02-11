@@ -1,8 +1,8 @@
-﻿{
+{
   "app": {
     "name": "Skynetic",
     "tagline": "AI-first learning platform",
-    "footerLeft": "Skynetic © 2026. All rights reserved.",
+    "footerLeft": "Skynetic � 2026. All rights reserved.",
     "footerRight": "Built for AI-powered, accessible learning."
   },
   "nav": {
@@ -104,19 +104,22 @@
     "endNotice": "End of lesson section reached.",
     "courseOutline": "Course outline",
     "minutes": "min",
+    "start": "Start lesson",
     "audioLabel": "Lesson narration",
     "audioReady": "Play audio",
     "audioPause": "Pause audio",
     "audioResume": "Resume audio",
     "audioStop": "Stop audio",
     "audioRate": "Speech rate",
-    "audioUnavailable": "Audio requires a supported browser."
+    "audioUnavailable": "Audio requires a supported browser.",
+    "chatLocked": "Start the lesson to unlock the AI tutor for this content."
   },
   "chat": {
     "title": "AI Tutor",
     "welcome": "Hi! I am your Skynetic AI tutor. Ask me to clarify concepts or generate examples.",
     "placeholder": "Ask the AI tutor",
     "thinking": "Thinking...",
+    "timeout": "The AI tutor took too long to respond. Please try again.",
     "error": "AI service is unavailable. Please try again."
   },
   "exercises": {
@@ -149,6 +152,7 @@
     "rank": "Leaderboard rank",
     "performance": "Performance trend",
     "leaderboard": "Leaderboard",
+    "leaderboardEmpty": "No leaderboard entries yet.",
     "activeCourses": "Active courses",
     "continue": "Continue where you left off.",
     "assessment": "Assessment readiness",
@@ -172,6 +176,11 @@
     "badges": "Badges",
     "secure": "Secure AI learning profile",
     "save": "Save preferences",
+    "edit": "Edit profile",
+    "cancel": "Cancel",
+    "saving": "Saving...",
+    "saved": "Profile updated.",
+    "empty": "No data yet.",
     "defaultGoals": "Reach mid-course milestones in 6 weeks with consistent practice.",
     "defaultFocus": "Python basics, English conversation, algebra refresh."
   },
@@ -200,3 +209,4 @@
     "goLogin": "Login"
   }
 }
+

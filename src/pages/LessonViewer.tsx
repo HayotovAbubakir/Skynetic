@@ -149,7 +149,17 @@ export const LessonViewer = () => {
                   </div>
                   <div className="flex flex-wrap items-center gap-2">
                     {!isSpeaking && (
-                      <Button size="sm" variant="outline" onClick={speak}>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        onClick={() => {
+                          if (!hasStarted) {
+                            setHasStarted(true)
+                            setIsPlaying(true)
+                          }
+                          speak()
+                        }}
+                      >
                         <PlayCircle size={16} /> {t('lesson.audioReady')}
                       </Button>
                     )}
@@ -212,7 +222,18 @@ export const LessonViewer = () => {
           />
         </div>
 
-        <ChatPanel />
+        {hasStarted ? (
+          <ChatPanel />
+        ) : (
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base">{t('chat.title')}</CardTitle>
+            </CardHeader>
+            <CardContent className="text-sm text-slate-600 dark:text-slate-300">
+              {t('lesson.chatLocked')}
+            </CardContent>
+          </Card>
+        )}
       </div>
     </div>
   )

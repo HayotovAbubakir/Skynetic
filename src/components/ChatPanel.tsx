@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Bot, Send, Sparkles } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { sendChatMessage, type ChatMessage } from '../services/ai'
@@ -14,13 +14,20 @@ const createMessage = (role: ChatMessage['role'], content: string): ChatMessage 
 })
 
 export const ChatPanel = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const [messages, setMessages] = useState<ChatMessage[]>([
     createMessage('assistant', t('chat.welcome')),
   ])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const listRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const list = listRef.current
+    if (!list) return
+    list.scrollTop = list.scrollHeight
+  }, [messages, loading, error])
 
   const handleSend = async () => {
     if (!input.trim() || loading) return
@@ -31,10 +38,23 @@ export const ChatPanel = () => {
     setError('')
 
     try {
-      const response = await sendChatMessage(userMessage.content)
+      const lang = i18n.language
+      let payloadContent = userMessage.content
+
+      if (lang === 'ru') {
+        payloadContent = `Отвечай, пожалуйста, на русском языке.\n\n${userMessage.content}`
+      } else if (lang === 'uz') {
+        payloadContent = `Iltimos, javoblarni o'zbek tilida yozing.\n\n${userMessage.content}`
+      }
+
+      const response = await sendChatMessage(payloadContent)
       setMessages((prev) => [...prev, createMessage('assistant', response.reply)])
     } catch (err) {
-      setError(err instanceof Error ? err.message : t('chat.error'))
+      if (err instanceof Error && err.name === 'AbortError') {
+        setError(t('chat.timeout'))
+      } else {
+        setError(err instanceof Error ? err.message : t('chat.error'))
+      }
     } finally {
       setLoading(false)
     }
@@ -48,7 +68,10 @@ export const ChatPanel = () => {
         </CardTitle>
       </CardHeader>
       <CardContent className="flex h-[420px] flex-col gap-4">
-        <div className="flex-1 space-y-3 overflow-y-auto rounded-xl bg-slate-50/80 p-4 text-slate-700 dark:bg-slate-800/70 dark:text-slate-100">
+        <div
+          ref={listRef}
+          className="flex-1 space-y-3 overflow-y-auto rounded-xl bg-slate-50/80 p-4 text-slate-700 dark:bg-slate-800/70 dark:text-slate-100"
+        >
           {messages.map((message) => (
             <div
               key={message.id}
@@ -89,3 +112,5 @@ export const ChatPanel = () => {
     </Card>
   )
 }
+
+

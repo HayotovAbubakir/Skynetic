@@ -32,6 +32,7 @@ export const Dashboard = () => {
   const averageScore = Math.round(
     progress.reduce((sum, record) => sum + record.averageScore, 0) / Math.max(progress.length, 1),
   )
+  const rank = leaderboard.length > 0 ? user.rank : 0
 
   const chartData = progress.map((record) => ({
     name: courses.find((course) => course.id === record.courseId)?.title ?? 'Course',
@@ -58,7 +59,7 @@ export const Dashboard = () => {
         <StatCard label={t('dashboard.enrolled')} value={`${enrolledCourses.length}`} icon={<Target />} />
         <StatCard label={t('dashboard.averageScore')} value={`${averageScore}%`} icon={<BarChart3 />} />
         <StatCard label={t('dashboard.streak')} value={`${user.streakDays}`} icon={<CalendarCheck />} />
-        <StatCard label={t('dashboard.rank')} value={`#${user.rank}`} icon={<Crown />} />
+        <StatCard label={t('dashboard.rank')} value={`#${rank}`} icon={<Crown />} />
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
@@ -84,22 +85,28 @@ export const Dashboard = () => {
             <CardTitle className="text-base">{t('dashboard.leaderboard')}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            {leaderboard.map((entry, index) => (
-              <div
-                key={entry.id}
-                className="flex items-start justify-between gap-3 rounded-xl border border-slate-200/70 bg-slate-50/80 px-4 py-3 text-sm text-slate-700 dark:border-slate-800/80 dark:bg-slate-800/70 dark:text-slate-100"
-              >
-                <div className="flex min-w-0 items-center gap-3">
-                  <span className="font-semibold text-slate-500 dark:text-slate-300">
-                    {index + 1}
-                  </span>
-                  <span className="break-words font-medium">{entry.name}</span>
+            {leaderboard.length === 0 ? (
+              <p className="text-sm text-slate-500 dark:text-slate-300">
+                {t('dashboard.leaderboardEmpty')}
+              </p>
+            ) : (
+              leaderboard.map((entry, index) => (
+                <div
+                  key={entry.id}
+                  className="flex items-start justify-between gap-3 rounded-xl border border-slate-200/70 bg-slate-50/80 px-4 py-3 text-sm text-slate-700 dark:border-slate-800/80 dark:bg-slate-800/70 dark:text-slate-100"
+                >
+                  <div className="flex min-w-0 items-center gap-3">
+                    <span className="font-semibold text-slate-500 dark:text-slate-300">
+                      {index + 1}
+                    </span>
+                    <span className="break-words font-medium">{entry.name}</span>
+                  </div>
+                  <Badge className="shrink-0 border-teal/20 bg-teal/10 text-teal dark:border-teal-500/40 dark:bg-teal-500/20 dark:text-teal-200">
+                    {entry.points} {t('dashboard.points')}
+                  </Badge>
                 </div>
-                <Badge className="shrink-0 border-teal/20 bg-teal/10 text-teal dark:border-teal-500/40 dark:bg-teal-500/20 dark:text-teal-200">
-                  {entry.points} {t('dashboard.points')}
-                </Badge>
-              </div>
-            ))}
+              ))
+            )}
           </CardContent>
         </Card>
       </div>

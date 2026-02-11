@@ -1,8 +1,8 @@
-﻿{
+{
   "app": {
     "name": "Skynetic",
     "tagline": "AI asosidagi ta'lim platformasi",
-    "footerLeft": "Skynetic © 2026. Barcha huquqlar himoyalangan.",
+    "footerLeft": "Skynetic � 2026. Barcha huquqlar himoyalangan.",
     "footerRight": "AI yordamida qulay va ochiq ta'lim uchun."
   },
   "nav": {
@@ -104,19 +104,22 @@
     "endNotice": "Dars bo'limi yakunlandi.",
     "courseOutline": "Kurs rejasi",
     "minutes": "daq",
+    "start": "Darsni boshlash",
     "audioLabel": "Darsni ovozli o'qish",
     "audioReady": "O'ynatish",
     "audioPause": "Pauza",
     "audioResume": "Davom",
     "audioStop": "To'xtatish",
     "audioRate": "Nutq tezligi",
-    "audioUnavailable": "Audio uchun qo'llab-quvvatlanadigan brauzer kerak."
+    "audioUnavailable": "Audio uchun qo'llab-quvvatlanadigan brauzer kerak.",
+    "chatLocked": "Mazkur dars bo'yicha AI tutor foydalanish uchun avval darsni boshlang."
   },
   "chat": {
     "title": "AI tutor",
     "welcome": "Salom! Men Skynetic AI tutoriman. Tushunmagan joylaringizni so'rang.",
     "placeholder": "AI tutordan so'rash",
     "thinking": "O'ylayapman...",
+    "timeout": "AI tutor javobi kechikdi. Qayta urinib ko'ring.",
     "error": "AI xizmati mavjud emas. Qayta urinib ko'ring."
   },
   "exercises": {
@@ -149,6 +152,7 @@
     "rank": "Reyting o'rni",
     "performance": "O'sish grafigi",
     "leaderboard": "Reyting",
+    "leaderboardEmpty": "Reyting uchun ma'lumot hozircha yo'q.",
     "activeCourses": "Faol kurslar",
     "continue": "O'zingiz qolgan joydan davom eting.",
     "assessment": "Baholashga tayyorgarlik",
@@ -172,6 +176,11 @@
     "badges": "Nishonlar",
     "secure": "Xavfsiz AI o'quv profili",
     "save": "Sozlamalarni saqlash",
+    "edit": "Profilni tahrirlash",
+    "cancel": "Bekor qilish",
+    "saving": "Saqlanmoqda...",
+    "saved": "Profil yangilandi.",
+    "empty": "Hozircha ma'lumot yo'q.",
     "defaultGoals": "6 hafta ichida muntazam mashq bilan oraliq bosqichlarga erishish.",
     "defaultFocus": "Python asoslari, inglizcha suhbat, algebra takrorlash."
   },
@@ -200,3 +209,4 @@
     "goLogin": "Kirish"
   }
 }
+

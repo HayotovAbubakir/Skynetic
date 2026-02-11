@@ -3,7 +3,7 @@ import { Search } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { CourseCard } from '../components/CourseCard'
 import { Input } from '../components/ui/Input'
-import { courses } from '../data/catalog'
+import { useAppStore } from '../features/appStore'
 import type { CourseCategory } from '../types'
 
 const categories: CourseCategory[] = ['Programming', 'Languages', 'School subjects']
@@ -11,6 +11,7 @@ const categories: CourseCategory[] = ['Programming', 'Languages', 'School subjec
 export const CourseCatalog = () => {
   const [query, setQuery] = useState('')
   const { t } = useTranslation()
+  const { courses } = useAppStore()
   const categoryLabels: Record<CourseCategory, string> = {
     Programming: t('categories.programming'),
     Languages: t('categories.languages'),
@@ -24,7 +25,7 @@ export const CourseCatalog = () => {
         .toLowerCase()
         .includes(query.toLowerCase()),
     )
-  }, [query])
+  }, [courses, query])
 
   return (
     <div className="space-y-10">

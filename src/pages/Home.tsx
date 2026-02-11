@@ -6,25 +6,27 @@ import { CourseCard } from '../components/CourseCard'
 import { StatCard } from '../components/StatCard'
 import { Button } from '../components/ui/Button'
 import { Card, CardContent } from '../components/ui/Card'
-import { featuredCourses } from '../data/catalog'
+import { useAppStore } from '../features/appStore'
 
 export const Home = () => {
   const { t } = useTranslation()
+  const { courses } = useAppStore()
+  const featuredCourses = courses.slice(0, 6)
 
   const stats = [
     {
       label: t('home.stats.learners.label'),
-      value: '42k+',
+      value: '0',
       helper: t('home.stats.learners.helper'),
     },
     {
       label: t('home.stats.sessions.label'),
-      value: '310k',
+      value: '0',
       helper: t('home.stats.sessions.helper'),
     },
     {
       label: t('home.stats.completion.label'),
-      value: '86%',
+      value: '0%',
       helper: t('home.stats.completion.helper'),
     },
   ]

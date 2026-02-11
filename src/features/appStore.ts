@@ -1,6 +1,7 @@
 ﻿import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import { attempts, courses, leaderboard, progressRecords, user } from '../data/catalog'
+import { buildCatalog } from '../data/catalog'
+import i18n from '../i18n'
 import type {
   Attempt,
   Course,
@@ -33,14 +34,16 @@ type AppState = {
 
 const completionThreshold = 70
 
+const initialCatalog = buildCatalog(i18n.language)
+
 export const useAppStore = create<AppState>()(
   persist(
     (set, get) => ({
-      user,
-      courses,
-      progress: progressRecords,
-      attempts,
-      leaderboard,
+      user: initialCatalog.user,
+      courses: initialCatalog.courses,
+      progress: initialCatalog.progressRecords,
+      attempts: initialCatalog.attempts,
+      leaderboard: initialCatalog.leaderboard,
       lessonProgress: {},
       activeCourseId: null,
       setActiveCourse: (courseId) => set(() => ({ activeCourseId: courseId })),
@@ -100,9 +103,7 @@ export const useAppStore = create<AppState>()(
             return {
               ...record,
               completedLessonIds: Array.from(completed),
-              averageScore: Math.round(
-                (record.averageScore + score) / 2,
-              ),
+              averageScore: Math.round((record.averageScore + score) / 2),
               lastStudiedAt: now.slice(0, 10),
             }
           })
@@ -129,3 +130,8 @@ export const useAppStore = create<AppState>()(
     },
   ),
 )
+
+i18n.on('languageChanged', (lng) => {
+  const { courses } = buildCatalog(lng)
+  useAppStore.setState(() => ({ courses }))
+})

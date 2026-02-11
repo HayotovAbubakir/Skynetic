@@ -1,6 +1,30 @@
-﻿export type CourseCategory = 'Programming' | 'Languages' | 'School subjects'
+export type CourseCategory = 'Programming' | 'Languages' | 'School subjects'
 
 export type QuizType = 'lesson-review' | 'mid-course' | 'final'
+
+export type InteractiveTask =
+  | {
+      type: 'math'
+      /** High-level description of the task, can include LaTeX like \\(x^2\\). */
+      prompt: string
+      /** Optional worked example or hint, usually also shown in plain text. */
+      hint?: string
+      /** Optional LaTeX snippet that can be rendered with a math component. */
+      latexExample?: string
+      /** Short textual description of the expected solution or rubric. */
+      solution: string
+    }
+  | {
+      type: 'code'
+      /** Target environment for the playground or code snippet. */
+      language: 'html-css' | 'git' | 'firebase' | 'mui'
+      /** Natural-language instructions for the task. */
+      instructions: string
+      /** Starter code that will be loaded into a playground or editor. */
+      starterCode: string
+      /** Optional notes about what a good solution should look like. */
+      solutionNotes?: string
+    }
 
 export interface Exercise {
   id: string
@@ -35,6 +59,19 @@ export interface Lesson {
   exercises: Exercise[]
   quiz: Quiz
   sources: string[]
+  /**
+   * Rich lesson content blocks used by the new course engine.
+   * When present, this should be considered the source of truth for text rendering.
+   */
+  fullContent?: string[]
+  /**
+   * A narration-friendly version of the lesson text, optimized for TTS.
+   */
+  voiceScript?: string
+  /**
+   * Optional structured interactive task used for grading and playgrounds.
+   */
+  interactiveTask?: InteractiveTask
 }
 
 export interface Course {
