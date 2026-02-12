@@ -196,10 +196,10 @@
     "invalidCredentials": "Noto'g'ri email yoki parol.",
     "accountDeleted": "Bu hisob o'chirib tashlandi. O'qishni davom ettirish uchun iltimos qayta ro'yxatdan o'ting.",
     "emailExists": "Bu email allaqachon ro'yxatdan o'tgan. Iltimos, kiring yoki boshqa emaildan foydalaning.",
-    "passwordWeak": "Parol notaqin kuchli. Kamida 6 ta belgi ishlatilishi kerak.",
-    "signupFailed": "Hisobni yarata olmadi. Iltimos, qayta urinib ko'ring.",
-    "confirmEmail": "Hisob yaratildi! Hisobingizni tasdiqlash uchun emailingizni tekshiring va kirishdan oldin tasdiqlang.",
-    "tooManyRequests": "Juda ko'p so'rovlar. Iltimos, bir paytni kuting va qayta urinib ko'ring.",
+    "passwordWeak": "Parol yetarlicha kuchli emas. Kamida 6 ta belgi ishlating.",
+    "signupFailed": "Hisobni yarata olmadik. Iltimos, qayta urinib ko'ring.",
+    "confirmEmail": "Hisob yaratildi! Iltimos, kirishdan oldin emailingizni tasdiqlang.",
+    "tooManyRequests": "Juda ko'p urinishlar. Biroz kutib, qayta urinib ko'ring.",
     "signIn": "Kirish",
     "signUp": "Hisob yaratish",
     "signOut": "Chiqish",
@@ -209,4 +209,3 @@
     "goLogin": "Kirish"
   }
 }
-

@@ -1,0 +1,235 @@
+const en = {
+  app: {
+    name: 'Skynetic',
+    tagline: 'AI-first learning platform',
+    footerLeft: 'Skynetic © 2026. All rights reserved.',
+    footerRight: 'Built for AI-powered, accessible learning.',
+  },
+  nav: {
+    home: 'Home',
+    catalog: 'Course Catalog',
+    lesson: 'Lesson Viewer',
+    dashboard: 'Dashboard',
+    profile: 'Profile',
+    login: 'Login',
+    logout: 'Logout',
+    register: 'Register',
+    start: 'Start learning',
+    toggle: 'Toggle navigation',
+  },
+  language: {
+    label: 'Language',
+    english: 'English',
+    russian: 'Russian',
+    uzbek: 'Uzbek',
+  },
+  theme: {
+    label: 'Theme',
+    light: 'Light',
+    dark: 'Dark',
+    toggle: 'Toggle theme',
+  },
+  common: {
+    search: 'Search',
+    progress: 'Progress',
+    lessons: 'lessons',
+    hours: 'hrs',
+    restart: 'Restart',
+    play: 'Play',
+    pause: 'Pause',
+    resume: 'Resume',
+    stop: 'Stop',
+    submit: 'Submit',
+    save: 'Save preferences',
+    loading: 'Loading...',
+    error: 'Error',
+    back: 'Back',
+    score: 'Score',
+    completed: 'Completed',
+    notCompleted: 'Not completed',
+    noLesson: 'No lesson found.',
+    noAccess: 'Please sign in to continue.',
+    notFound: 'Page not found.',
+  },
+  home: {
+    eyebrow: 'Skynetic',
+    title:
+      'A modern learning platform with AI tutors, structured courses, and real progress tracking.',
+    subtitle:
+      'Build skills in programming, languages, and core school subjects with guided lessons, quizzes, and adaptive tutoring.',
+    ctaPrimary: 'Explore catalog',
+    ctaSecondary: 'View dashboard',
+    featured: 'Featured',
+    featuredTitle: 'Courses to start today',
+    browseAll: 'Browse all',
+    stats: {
+      learners: {
+        label: 'Active learners',
+        helper: 'Across 68 countries',
+      },
+      sessions: {
+        label: 'AI tutor sessions',
+        helper: 'Last 30 days',
+      },
+      completion: {
+        label: 'Completion rate',
+        helper: 'For tracked cohorts',
+      },
+    },
+    value: {
+      aiTitle: 'Adaptive AI tutoring',
+      aiBody:
+        'Instant clarification, examples, and coaching based on your performance.',
+      journeyTitle: 'Structured learning journeys',
+      journeyBody:
+        'Course paths designed for steady progress and confidence-building.',
+      insightTitle: 'Data-backed insights',
+      insightBody:
+        'Track readiness, exam scores, and weak topics with smart analytics.',
+    },
+  },
+  catalog: {
+    eyebrow: 'Course catalog',
+    title: 'Find your next learning path',
+    subtitle:
+      'Explore structured programs across programming, languages, and core school subjects.',
+    searchPlaceholder: 'Search courses',
+    available: 'courses available',
+  },
+  course: {
+    open: 'Open course',
+  },
+  categories: {
+    programming: 'Programming',
+    languages: 'Languages',
+    school: 'School subjects',
+  },
+  lesson: {
+    eyebrow: 'Lesson viewer',
+    theoryTitle: 'Theory (progressive)',
+    endNotice: 'End of lesson section reached.',
+    courseOutline: 'Course outline',
+    minutes: 'min',
+    start: 'Start lesson',
+    audioLabel: 'Lesson narration',
+    audioReady: 'Play audio',
+    audioPause: 'Pause audio',
+    audioResume: 'Resume audio',
+    audioStop: 'Stop audio',
+    audioRate: 'Speech rate',
+    audioUnavailable: 'Audio requires a supported browser.',
+    chatLocked:
+      'Start the lesson to unlock the AI tutor for this content.',
+  },
+  chat: {
+    title: 'AI Tutor',
+    welcome:
+      'Hi! I am your Skynetic AI tutor. Ask me to clarify concepts or generate examples.',
+    placeholder: 'Ask the AI tutor',
+    thinking: 'Thinking...',
+    timeout:
+      'The AI tutor took too long to respond. Please try again.',
+    error: 'AI service is unavailable. Please try again.',
+  },
+  exercises: {
+    title: 'Exercises',
+    hint: 'Hint',
+    answerPlaceholder: 'Write your answer',
+    submit: 'Submit exercises',
+    saved: 'Exercises submitted',
+  },
+  quiz: {
+    start: 'Start quiz',
+    submit: 'Submit quiz',
+    score: 'Your score',
+    correct: 'Correct',
+    incorrect: 'Incorrect',
+    tryAgain: 'Try again',
+    type: {
+      'lesson-review': 'Lesson review',
+      'mid-course': 'Mid-course exam',
+      final: 'Final exam',
+    },
+  },
+  dashboard: {
+    eyebrow: 'Dashboard',
+    title: 'Welcome back, {{name}}',
+    subtitle:
+      'Track progress, assessments, and growth insights across your courses.',
+    enrolled: 'Enrolled courses',
+    averageScore: 'Average score',
+    streak: 'Streak days',
+    rank: 'Leaderboard rank',
+    performance: 'Performance trend',
+    leaderboard: 'Leaderboard',
+    leaderboardEmpty: 'No leaderboard entries yet.',
+    activeCourses: 'Active courses',
+    continue: 'Continue where you left off.',
+    assessment: 'Assessment readiness',
+    assessmentHelp:
+      'Review quiz scores before you move to the next lesson.',
+    lessonReview: 'Lesson review',
+    midCourse: 'Mid-course exam',
+    finalExam: 'Final exam',
+    enrolledBadge: 'enrolled',
+    points: 'pts',
+  },
+  profile: {
+    eyebrow: 'Profile',
+    title: 'Learner profile',
+    subtitle:
+      'Keep your learning goals updated to tailor AI tutoring and recommendations.',
+    account: 'Account summary',
+    preferences: 'Learning preferences',
+    fullName: 'Full name',
+    email: 'Email',
+    goals: 'Goals',
+    focus: 'Focus areas',
+    badges: 'Badges',
+    secure: 'Secure AI learning profile',
+    save: 'Save preferences',
+    edit: 'Edit profile',
+    cancel: 'Cancel',
+    saving: 'Saving...',
+    saved: 'Profile updated.',
+    empty: 'No data yet.',
+    defaultGoals:
+      'Reach mid-course milestones in 6 weeks with consistent practice.',
+    defaultFocus:
+      'Python basics, English conversation, algebra refresh.',
+  },
+  auth: {
+    loginTitle: 'Welcome back',
+    loginSubtitle:
+      'Sign in to continue learning with Skynetic.',
+    registerTitle: 'Create your account',
+    registerSubtitle: 'Start your AI-guided learning journey.',
+    email: 'Email',
+    password: 'Password',
+    confirm: 'Confirm password',
+    passwordMismatch: 'Passwords do not match.',
+    invalidCredentials: 'Invalid email or password.',
+    accountDeleted:
+      'This account has been deleted. Please register again to continue learning.',
+    emailExists:
+      'This email is already registered. Please sign in or use a different email.',
+    passwordWeak:
+      'Password is too weak. Use at least 6 characters.',
+    signupFailed:
+      'Failed to create account. Please try again.',
+    confirmEmail:
+      'Account created! Please check your email to confirm your account before signing in.',
+    tooManyRequests:
+      'Too many requests. Please wait a moment and try again.',
+    signIn: 'Sign in',
+    signUp: 'Create account',
+    signOut: 'Sign out',
+    haveAccount: 'Already have an account?',
+    needAccount: 'Need an account?',
+    goRegister: 'Register',
+    goLogin: 'Login',
+  },
+} as const
+
+export default en
+
